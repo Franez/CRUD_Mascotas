@@ -98,7 +98,6 @@ namespace back_mascota.Models
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 SqlCommand cmd = conn.CreateCommand();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 cmd.CommandText = "Mascota_Update";
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -128,6 +127,7 @@ namespace back_mascota.Models
                 return respuesta;
             }
         }
+
         public bool deleteMascota(int id)
         {
             bool respuesta = false;
